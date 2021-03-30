@@ -58,8 +58,8 @@ public:
     bool backspaceCompare(string S, string T) {
         string finalS= buildstring(S);
         string finalT= buildstring(T);
-        cout<<finalS<<endl;
-        cout<<finalT;
+        //cout<<finalS<<endl;
+        //cout<<finalT;
         
         if(finalS.size() != finalT.size()){
             return false;
