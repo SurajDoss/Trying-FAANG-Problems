@@ -48,7 +48,9 @@ public:
                 buildStr.push_back(str[i]);
             }
             else{
-                buildStr.pop_back();
+                if(!buildStr.empty()){
+                    buildStr.pop_back();  
+                }
             }
         }
         return buildStr;
@@ -56,12 +58,14 @@ public:
     bool backspaceCompare(string S, string T) {
         string finalS= buildstring(S);
         string finalT= buildstring(T);
+        cout<<finalS<<endl;
+        cout<<finalT;
         
         if(finalS.size() != finalT.size()){
             return false;
         }
-        for(int i =0; i<finalS.size();i++){
-            if(finalS[i] != finalS[i]){
+        for(int i =0; i<finalS.length();i++){
+            if(finalS[i] != finalT[i]){
                 return false;
             }
         }
