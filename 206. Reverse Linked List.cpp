@@ -33,7 +33,7 @@ public:
         ListNode* prev = NULL;
         ListNode* cur = head;
             
-        while(next){
+        while(cur){
             next = cur->next;
             cur->next = prev;
             prev = cur;
