@@ -45,3 +45,27 @@ public:
         }
     }
 }; 
+
+////////////////////////////////////////
+////////////////////////////////////////
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+       unordered_map <int, int> mp;            // 2 -> 0, 7-> 1....
+       vector <int> ans;
+        for(int i =0; i<nums.size(); i++){
+            auto it = mp.find(nums[i]);
+            if(it == mp.end())
+                mp[nums[i]] = i;
+            auto targetValue = mp.find(target - nums[i]);
+            if(targetValue != mp.end() && i != mp[target - nums[i]]){
+                ans.push_back(mp[target - nums[i]]);
+                ans.push_back(i);
+                break;
+            }
+        }
+        return ans;
+    }
+};
+    
