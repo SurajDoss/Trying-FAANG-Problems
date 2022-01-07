@@ -71,3 +71,24 @@ public:
     }
 };
 
+////////////////////////////////////
+////O(n)
+////////////////////////////////////
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int amountOfWater = INT_MIN;
+        int i =0; 
+        int j = height.size()-1;
+        
+        while(i<j){
+            int waterBox = min(height[i], height[j]) * (j - i);
+            amountOfWater = max(amountOfWater, waterBox);
+            height[i]< height[j] ? i++ : j--;
+        }
+        return amountOfWater;
+        
+    }
+};
+
