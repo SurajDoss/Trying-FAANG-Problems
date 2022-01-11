@@ -1,1 +1,1 @@
-# Trying-FAANG-Problems
+# Trying-Leetcode problems
